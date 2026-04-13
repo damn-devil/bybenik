@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <meta name="theme-color" content="#f5f7fa" id="metaThemeColor">
+    <meta name="theme-color" content="#f4f2ef" id="metaThemeColor">
     <title>ByBenik — бронирование столиков и заказ еды</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,31 +11,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-primary: #f5f7fa;
-            --bg-secondary: #e9ecef;
-            --bg-card: rgba(255, 255, 255, 0.95);
-            --bg-glass: rgba(29, 72, 227, 0.08);
-            --bg-glass-hover: rgba(29, 72, 227, 0.15);
-            --bg-glass-strong: rgba(29, 72, 227, 0.2);
-            --text-primary: #1a1a1a;
-            --text-secondary: #5a5a5a;
-            --text-accent: #1d48e3;
-            --accent-blue: #1d48e3;
-            --accent-light: #1d48e3;
-            --shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            --border-subtle: rgba(0, 0, 0, 0.08);
+            --bg-primary: #f4f2ef;
+            --bg-secondary: #e8e4df;
+            --bg-card: rgba(255, 255, 255, 0.92);
+            --bg-glass: rgba(196, 92, 38, 0.08);
+            --bg-glass-hover: rgba(196, 92, 38, 0.14);
+            --bg-glass-strong: rgba(196, 92, 38, 0.2);
+            --text-primary: #1c1917;
+            --text-secondary: #57534e;
+            --text-accent: #b45309;
+            --accent-blue: #c45c26;
+            --accent-light: #d97706;
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            --border-subtle: rgba(28, 25, 23, 0.08);
             --input-bg: rgba(0, 0, 0, 0.03);
             --input-bg-focus: rgba(0, 0, 0, 0.05);
-            --hero-gradient-mid: #e9ecef;
-            --hero-radial: rgba(29, 72, 227, 0.05);
-            --map-gradient-end: #e9ecef;
-            --floating-nav-bg: rgba(255, 255, 255, 0.42);
-            --floating-nav-blur: blur(28px) saturate(180%);
-            --header-bar-bg: rgba(255, 255, 255, 0.38);
-            --header-bar-blur: blur(32px) saturate(185%);
-            --header-widget-bg: rgba(255, 255, 255, 0.28);
-            --header-widget-blur: blur(24px) saturate(170%);
-            --nav-link-active-bg: rgba(29, 72, 227, 0.12);
+            --hero-gradient-mid: #ebe7e2;
+            --hero-radial: rgba(196, 92, 38, 0.07);
+            --map-gradient-end: #e8e4df;
+            --floating-nav-bg: rgba(255, 252, 248, 0.5);
+            --floating-nav-blur: blur(28px) saturate(160%);
+            --header-shell-bg: rgba(255, 252, 248, 0.52);
+            --header-shell-blur: blur(32px) saturate(165%);
+            --header-widget-bg: rgba(255, 255, 255, 0.35);
+            --header-widget-blur: blur(22px) saturate(150%);
+            --nav-link-active-bg: rgba(196, 92, 38, 0.14);
             --qty-btn-bg: #fff;
             --modal-overlay: rgba(0, 0, 0, 0.4);
             --modal-inner-bg: #fff;
@@ -47,34 +47,34 @@
 
         [data-theme="dark"] {
             color-scheme: dark;
-            --bg-primary: #0f1117;
-            --bg-secondary: #181b24;
-            --bg-card: rgba(22, 26, 36, 0.72);
-            --bg-glass: rgba(75, 135, 253, 0.12);
-            --bg-glass-hover: rgba(75, 135, 253, 0.2);
-            --bg-glass-strong: rgba(75, 135, 253, 0.28);
-            --text-primary: #eceff4;
-            --text-secondary: #9aa3b5;
-            --text-accent: #7c9cff;
-            --accent-blue: #4b87fd;
-            --accent-light: #7c9cff;
-            --shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
-            --border-subtle: rgba(255, 255, 255, 0.08);
+            --bg-primary: #141414;
+            --bg-secondary: #1f1f1f;
+            --bg-card: rgba(38, 38, 38, 0.78);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --bg-glass-hover: rgba(217, 119, 6, 0.12);
+            --bg-glass-strong: rgba(217, 119, 6, 0.18);
+            --text-primary: #e7e5e4;
+            --text-secondary: #a8a29e;
+            --text-accent: #f59e0b;
+            --accent-blue: #ea580c;
+            --accent-light: #fb923c;
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+            --border-subtle: rgba(255, 255, 255, 0.09);
             --input-bg: rgba(255, 255, 255, 0.06);
             --input-bg-focus: rgba(255, 255, 255, 0.1);
-            --hero-gradient-mid: #1a1e2a;
-            --hero-radial: rgba(75, 135, 253, 0.12);
-            --map-gradient-end: #181b24;
-            --floating-nav-bg: rgba(12, 14, 20, 0.42);
-            --floating-nav-blur: blur(44px) saturate(220%);
-            --header-bar-bg: rgba(10, 12, 18, 0.48);
-            --header-bar-blur: blur(48px) saturate(220%);
+            --hero-gradient-mid: #1c1c1c;
+            --hero-radial: rgba(234, 88, 12, 0.08);
+            --map-gradient-end: #1a1a1a;
+            --floating-nav-bg: rgba(30, 30, 30, 0.55);
+            --floating-nav-blur: blur(40px) saturate(140%);
+            --header-shell-bg: rgba(32, 32, 32, 0.58);
+            --header-shell-blur: blur(42px) saturate(145%);
             --header-widget-bg: rgba(255, 255, 255, 0.06);
-            --header-widget-blur: blur(36px) saturate(200%);
-            --nav-link-active-bg: rgba(124, 156, 255, 0.22);
-            --qty-btn-bg: #2a3040;
-            --modal-overlay: rgba(0, 0, 0, 0.65);
-            --modal-inner-bg: #1c202a;
+            --header-widget-blur: blur(32px) saturate(150%);
+            --nav-link-active-bg: rgba(234, 88, 12, 0.2);
+            --qty-btn-bg: #333;
+            --modal-overlay: rgba(0, 0, 0, 0.7);
+            --modal-inner-bg: #262626;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -90,73 +90,78 @@
 
         .site-top {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1002;
-            display: flex; align-items: center; justify-content: space-between;
-            gap: 10px;
-            padding: max(6px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) 8px max(12px, env(safe-area-inset-left, 0px));
-            background: var(--header-bar-bg);
-            backdrop-filter: var(--header-bar-blur);
-            -webkit-backdrop-filter: var(--header-bar-blur);
-            border-bottom: 1px solid var(--border-subtle);
-            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            display: flex; justify-content: center; align-items: center;
+            padding: max(8px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) 10px max(12px, env(safe-area-inset-left, 0px));
+            background: transparent; border: none; box-shadow: none; pointer-events: none;
         }
-        [data-theme="dark"] .site-top {
-            box-shadow: 0 8px 32px rgba(0,0,0,0.45);
-            border-bottom-color: rgba(255,255,255,0.1);
-        }
-        .site-top__logo-corner {
-            display: flex; align-items: center; line-height: 0; flex-shrink: 0;
-            padding: 6px 10px; border-radius: 16px;
-            background: var(--header-widget-bg);
-            backdrop-filter: var(--header-widget-blur);
-            -webkit-backdrop-filter: var(--header-widget-blur);
+        .site-top__shell {
+            pointer-events: auto;
+            display: flex; align-items: center; justify-content: space-between; gap: 10px;
+            width: 100%; max-width: min(720px, calc(100vw - 20px));
+            padding: 8px 12px 8px 10px;
+            border-radius: 25px;
+            background: var(--header-shell-bg);
+            backdrop-filter: var(--header-shell-blur);
+            -webkit-backdrop-filter: var(--header-shell-blur);
             border: 1px solid var(--border-subtle);
-            box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset;
-            transition: background 0.25s ease, transform 0.2s ease, border-color 0.2s ease;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
         }
-        [data-theme="dark"] .site-top__logo-corner {
-            box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset;
+        [data-theme="dark"] .site-top__shell { box-shadow: 0 10px 36px rgba(0,0,0,0.5); }
+        .site-top__brand {
+            display: flex; align-items: center; line-height: 0; flex-shrink: 0;
+            padding: 4px 6px; border-radius: 14px; text-decoration: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
         }
-        .site-top__logo-corner:hover {
-            background: var(--header-widget-bg);
-            filter: brightness(1.06);
-            transform: translateY(-1px);
-        }
-        [data-theme="dark"] .site-top__logo-corner:hover { filter: brightness(1.15); }
+        .site-top__brand:hover { opacity: 0.9; transform: scale(1.02); }
         .site-logo--small {
-            max-height: 40px; width: auto; max-width: 130px; object-fit: contain;
+            max-height: 38px; width: auto; max-width: 118px; object-fit: contain;
             display: block;
         }
+        .site-top__actions {
+            display: flex; align-items: center; gap: 6px; flex-shrink: 0;
+        }
+        .lang-switch {
+            display: flex; align-items: center; gap: 2px;
+            padding: 3px; border-radius: 18px;
+            background: var(--header-widget-bg);
+            backdrop-filter: var(--header-widget-blur);
+            -webkit-backdrop-filter: var(--header-widget-blur);
+            border: 1px solid var(--border-subtle);
+        }
+        .lang-btn {
+            background: transparent; border: none; padding: 6px 9px; border-radius: 14px;
+            font-weight: 700; font-size: 0.72rem; cursor: pointer; color: var(--text-secondary);
+            letter-spacing: 0.02em; transition: background 0.2s, color 0.2s;
+        }
+        .lang-btn.active { background: var(--nav-link-active-bg); color: var(--text-primary); }
         .theme-toggle {
             flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
-            width: 44px; height: 44px; border-radius: 16px; cursor: pointer;
+            width: 42px; height: 42px; border-radius: 16px; cursor: pointer;
             border: 1px solid var(--border-subtle);
             background: var(--header-widget-bg);
             backdrop-filter: var(--header-widget-blur);
             -webkit-backdrop-filter: var(--header-widget-blur);
-            color: var(--text-primary);
-            font-size: 1.1rem;
-            box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset;
-            transition: filter 0.25s ease, transform 0.2s ease, border-color 0.2s ease;
+            color: var(--text-primary); font-size: 1.05rem;
+            transition: filter 0.2s ease, transform 0.2s ease;
         }
-        [data-theme="dark"] .theme-toggle { box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset; }
-        .theme-toggle:hover { filter: brightness(1.08); transform: translateY(-1px); }
-        [data-theme="dark"] .theme-toggle:hover { filter: brightness(1.2); }
+        .theme-toggle:hover { filter: brightness(1.06); transform: translateY(-1px); }
+        [data-theme="dark"] .theme-toggle:hover { filter: brightness(1.12); }
         .theme-toggle:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; }
 
         .aurora-animation {
             position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1000;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, #d9e2ec 100%);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #e8e0d8 100%);
             display: flex; align-items: center; justify-content: center;
             transition: opacity 0.8s ease;
         }
         [data-theme="dark"] .aurora-animation {
-            background: linear-gradient(135deg, var(--bg-primary) 0%, #1e2433 100%);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #1a1a1a 100%);
         }
         .aurora-animation.hidden { opacity: 0; pointer-events: none; }
         .aurora-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; }
         .aurora-layer {
             position: absolute; top: 0; left: -10%; width: 120%; height: 60%;
-            background: linear-gradient(90deg, transparent 0%, rgba(0,150,255,0.2) 20%, rgba(29,72,227,0.3) 40%, rgba(138,43,226,0.2) 60%, rgba(255,0,255,0.1) 80%, transparent 100%);
+            background: linear-gradient(90deg, transparent 0%, rgba(234,88,12,0.12) 25%, rgba(196,92,38,0.18) 45%, rgba(180,83,9,0.1) 65%, transparent 100%);
             filter: blur(20px); animation: auroraFlow 8s ease-in-out infinite; transform: skewY(-5deg);
         }
         .aurora-layer:nth-child(2) { top: 20%; animation-delay: -2s; height: 40%; }
@@ -171,11 +176,10 @@
         }
         .aurora-logo {
             font-size: 3rem; font-weight: 800; margin-bottom: 20px;
-            background: linear-gradient(135deg, #1d48e3 0%, #4b87fd 25%, #8a2be2 50%, #ff00ff 75%, #ff0066 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(29,72,227,0.3);
+            background: linear-gradient(135deg, #9a3412 0%, #c2410c 35%, #ea580c 70%, #d97706 100%);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .aurora-subtitle { font-size: 1.2rem; color: var(--text-secondary); text-shadow: 0 0 10px rgba(29,72,227,0.2); }
+        .aurora-subtitle { font-size: 1.2rem; color: var(--text-secondary); }
         @keyframes fadeInLogo { to { opacity: 1; } }
 
         .section { padding: 80px 15px; position: relative; }
@@ -214,7 +218,7 @@
             -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
         }
         [data-theme="dark"] .hero-title {
-            background: linear-gradient(135deg, #f0f3fa 0%, #9aa8c9 100%);
+            background: linear-gradient(135deg, #fafaf9 0%, #d6d3d1 100%);
             -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
         }
         .hero-subtitle {
@@ -232,8 +236,8 @@
             display: inline-flex; align-items: center; gap: 6px;
             transition: all 0.3s ease; cursor: pointer; border: none;
         }
-        .glass-btn--primary { background: var(--bg-glass-strong); border-color: rgba(29,72,227,0.3); }
-        .glass-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(29,72,227,0.2); }
+        .glass-btn--primary { background: var(--bg-glass-strong); border-color: rgba(196,92,38,0.35); }
+        .glass-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(196,92,38,0.18); }
 
         .services-grid, .features-grid, .testimonials-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px;
@@ -251,13 +255,7 @@
             backdrop-filter: blur(28px) saturate(190%);
             -webkit-backdrop-filter: blur(28px) saturate(190%);
         }
-        .service-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-light));
-            transform: scaleX(0); transition: transform 0.3s ease;
-        }
-        .service-card:hover { transform: translateY(-5px); }
-        .service-card:hover::before { transform: scaleX(1); }
+        .service-card:hover { transform: translateY(-2px); }
         .menu-block-title {
             grid-column: 1 / -1; font-size: 1rem; font-weight: 800; text-align: center;
             margin: 24px 0 12px; letter-spacing: 0.04em; color: var(--text-primary);
@@ -439,16 +437,105 @@
         }
         .nav-link:hover, .nav-link.active { color: var(--text-primary); background: var(--nav-link-active-bg); }
 
-        .language-switcher {
-            position: fixed; top: 15px; right: 15px; z-index: 1002;
-            background: var(--bg-glass); backdrop-filter: blur(25px); border-radius: 25px; padding: 10px 15px;
+        details.menu-acc {
+            margin-bottom: 10px; border-radius: var(--border-radius-medium);
+            border: 1px solid var(--border-subtle); background: var(--bg-glass);
+            backdrop-filter: var(--blur-amount); -webkit-backdrop-filter: var(--blur-amount);
+            overflow: hidden;
         }
-        .lang-buttons { display: flex; gap: 5px; }
-        .lang-btn {
-            background: transparent; border: none; padding: 6px 12px; border-radius: 20px;
-            font-weight: 600; cursor: pointer; color: var(--text-secondary);
+        details.menu-acc[open] { background: var(--bg-card); }
+        summary.menu-acc__summary {
+            list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+            gap: 10px; padding: 12px 14px; font-weight: 700; font-size: 0.82rem; color: var(--text-primary);
+            letter-spacing: 0.03em;
         }
-        .lang-btn.active { background: rgba(29,72,227,0.1); color: var(--text-primary); }
+        summary.menu-acc__summary::-webkit-details-marker { display: none; }
+        .menu-acc__chev { font-size: 0.65rem; opacity: 0.6; transition: transform 0.2s; }
+        details.menu-acc[open] .menu-acc__chev { transform: rotate(180deg); }
+        .menu-acc__body { padding: 4px 10px 12px; border-top: 1px solid var(--border-subtle); }
+        .menu-row {
+            display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+            padding: 8px 0; border-bottom: 1px solid var(--border-subtle); font-size: 0.82rem;
+        }
+        .menu-row:last-child { border-bottom: none; }
+        .menu-row__name { flex: 1 1 120px; font-weight: 600; line-height: 1.35; min-width: 0; }
+        .menu-row__price { font-weight: 800; color: var(--text-accent); white-space: nowrap; }
+        .menu-row .menu-quantity { margin: 0; flex: 0 0 auto; }
+
+        .reviews-intro { text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px; max-width: 560px; margin-left: auto; margin-right: auto; }
+        .reviews-carousel { position: relative; max-width: 640px; margin: 0 auto; overflow: hidden; border-radius: var(--border-radius); }
+        .reviews-track { display: flex; transition: transform 0.4s ease; }
+        .review-slide { min-width: 100%; flex-shrink: 0; padding: 4px; box-sizing: border-box; }
+        .review-card {
+            background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--border-radius);
+            padding: 22px 20px; box-shadow: var(--shadow); min-height: 180px;
+        }
+        .review-card__stars { color: #f59e0b; margin-bottom: 10px; letter-spacing: 2px; }
+        .review-card__text { color: var(--text-secondary); font-style: italic; margin-bottom: 14px; line-height: 1.55; font-size: 0.95rem; }
+        .review-card__meta { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 0.85rem; }
+        .review-card__author { font-weight: 700; color: var(--text-primary); }
+        .review-card__badge { font-size: 0.72rem; color: var(--text-secondary); display: inline-flex; align-items: center; gap: 4px; }
+        .reviews-controls { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 18px; }
+        .reviews-controls button {
+            width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--border-subtle);
+            background: var(--bg-glass); color: var(--text-primary); cursor: pointer;
+            display: inline-flex; align-items: center; justify-content: center;
+        }
+        .reviews-dots { display: flex; gap: 6px; }
+        .reviews-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border-subtle); border: none; padding: 0; cursor: pointer; }
+        .reviews-dot.active { background: var(--accent-light); transform: scale(1.15); }
+        .reviews-google-cta { text-align: center; margin-top: 22px; }
+
+        .insta-section-note { text-align: center; color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 16px; }
+        .insta-tabs-bar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 16px; }
+        .insta-tab-btn {
+            padding: 10px 18px; border-radius: 22px; border: 1px solid var(--border-subtle);
+            background: var(--bg-glass); color: var(--text-primary); font-weight: 600; font-size: 0.85rem; cursor: pointer;
+            transition: background 0.2s;
+        }
+        .insta-tab-btn.active, .insta-tab-btn:hover { background: var(--bg-glass-strong); }
+        .insta-panel { display: none; animation: fadeIn 0.35s ease; }
+        .insta-panel.is-active { display: block; }
+        .insta-embed-wrap {
+            border-radius: var(--border-radius); overflow: hidden; border: 1px solid var(--border-subtle);
+            background: var(--bg-card); min-height: 420px; max-width: 540px; margin: 0 auto;
+        }
+        .insta-embed-wrap iframe { width: 100%; border: none; display: block; min-height: 480px; }
+        .insta-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; max-width: 720px; margin: 0 auto;
+        }
+        .insta-grid a {
+            display: block; aspect-ratio: 1; border-radius: 16px; overflow: hidden;
+            border: 1px solid var(--border-subtle); background: var(--bg-secondary);
+            position: relative;
+        }
+        .insta-grid a img { width: 100%; height: 100%; object-fit: cover; }
+        .insta-grid a .insta-fallback {
+            position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; color: var(--text-secondary); background: linear-gradient(145deg, var(--bg-glass), var(--bg-secondary));
+        }
+
+        .phone-field { display: flex; align-items: stretch; border: 1px solid var(--border-subtle); border-radius: var(--border-radius-small); overflow: hidden; background: var(--input-bg); }
+        .phone-field__prefix {
+            display: flex; align-items: center; padding: 0 12px; font-weight: 700; font-size: 0.9rem;
+            color: var(--text-secondary); background: var(--bg-secondary); border-right: 1px solid var(--border-subtle); flex-shrink: 0;
+        }
+        .phone-field .form-input { border: none; border-radius: 0; flex: 1; min-width: 0; background: transparent; }
+
+        .cart-line {
+            display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+            margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle);
+        }
+        .cart-line__info { flex: 1; min-width: 0; }
+        .cart-line__sum { font-weight: 700; color: var(--text-accent); white-space: nowrap; }
+        .cart-line__remove {
+            width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--border-subtle);
+            background: var(--input-bg); color: var(--text-accent); cursor: pointer; flex-shrink: 0;
+            display: inline-flex; align-items: center; justify-content: center;
+        }
+        .cart-totals { margin: 12px 0; font-size: 0.95rem; line-height: 1.7; }
+        .cart-totals__row { display: flex; justify-content: space-between; gap: 12px; }
+        .cart-totals__row--strong { font-weight: 800; font-size: 1.05rem; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border-subtle); }
 
         .section-title { text-align: center; font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800; margin-bottom: 15px; }
         .section-subtitle { text-align: center; color: var(--text-secondary); max-width: 700px; margin: 0 auto 30px; }
@@ -521,8 +608,10 @@
             .footer-content { grid-template-columns: 1fr; }
             .footer { padding-bottom: max(16px, env(safe-area-inset-bottom)); }
             .location-card { padding: 22px 16px; width: 100%; max-width: none; }
-            .site-logo--small { max-height: 36px; max-width: 112px; }
-            .theme-toggle { width: 42px; height: 42px; }
+            .site-logo--small { max-height: 34px; max-width: 104px; }
+            .theme-toggle { width: 40px; height: 40px; font-size: 1rem; }
+            .site-top__shell { padding: 6px 10px; max-width: calc(100vw - 16px); }
+            .lang-btn { padding: 5px 7px; font-size: 0.68rem; }
             .cart-modal__inner {
                 width: calc(100vw - max(24px, env(safe-area-inset-left) + env(safe-area-inset-right)));
                 max-width: 500px;
@@ -537,12 +626,21 @@
 </head>
 <body>
     <header class="site-top">
-        <a href="#menu" class="site-top__logo-corner" aria-label="BYBENIK — на главную">
-            <img class="site-logo--small" src="logo.png" alt="" width="120" height="48" decoding="async">
-        </a>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Переключить тему" title="Светлая / тёмная тема">
-            <i class="fas fa-moon" aria-hidden="true"></i>
-        </button>
+        <div class="site-top__shell">
+            <a href="#menu" class="site-top__brand" id="topBrandLink" aria-label="BYBENIK">
+                <img class="site-logo--small" src="logo.png" alt="" width="120" height="48" decoding="async">
+            </a>
+            <div class="site-top__actions">
+                <div class="lang-switch" role="group" aria-label="Язык">
+                    <button type="button" class="lang-btn active" data-lang="ru" aria-pressed="true">RU</button>
+                    <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+                    <button type="button" class="lang-btn" data-lang="tk" aria-pressed="false">TK</button>
+                </div>
+                <button type="button" class="theme-toggle" id="themeToggle" data-i18n-aria="aria.theme" title="Тема" aria-label="Тема">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
     </header>
 
     <div class="aurora-animation" id="auroraAnimation">
@@ -551,18 +649,19 @@
         </div>
         <div class="aurora-content">
             <div class="aurora-logo">BYBENIK</div>
-            <div class="aurora-subtitle">Бронирование столиков · Доставка еды</div>
+            <div class="aurora-subtitle" data-i18n="splash.tagline">Бронирование столиков · Доставка еды</div>
         </div>
     </div>
 
     <nav class="floating-nav">
         <div class="nav-links">
-            <a href="#menu" class="nav-link active">Меню</a>
-            <a href="#booking" class="nav-link">Бронь</a>
-            <a href="#about" class="nav-link">О нас</a>
-            <a href="#reviews" class="nav-link">Отзывы</a>
-            <a href="#contact" class="nav-link">Контакты</a>
-            <a href="#cart" class="nav-link" id="cartNav">Корзина <span class="cart-badge" id="cartCount">0</span></a>
+            <a href="#menu" class="nav-link active"><span data-i18n="nav.menu">Меню</span></a>
+            <a href="#booking" class="nav-link"><span data-i18n="nav.booking">Бронь</span></a>
+            <a href="#instagram" class="nav-link"><span data-i18n="nav.insta">Instagram</span></a>
+            <a href="#about" class="nav-link"><span data-i18n="nav.about">О нас</span></a>
+            <a href="#reviews" class="nav-link"><span data-i18n="nav.reviews">Отзывы</span></a>
+            <a href="#contact" class="nav-link"><span data-i18n="nav.contact">Контакты</span></a>
+            <a href="#cart" class="nav-link" id="cartNav"><span data-i18n="nav.cart">Корзина</span> <span class="cart-badge" id="cartCount">0</span></a>
         </div>
     </nav>
 
@@ -571,11 +670,11 @@
             <img class="hero-bg-logo__img" src="logo.png" alt="" decoding="async" fetchpriority="high">
         </div>
         <div class="hero-content">
-            <h1 class="hero-title">Ресторан BYBENIK — атмосфера, вкус, уют</h1>
-            <p class="hero-subtitle">Забронируйте столик онлайн или закажите блюда с доставкой. Европейская, восточная и авторская кухня.</p>
+            <h1 class="hero-title" data-i18n="hero.title">Ресторан BYBENIK — атмосфера, вкус, уют</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Забронируйте столик онлайн или закажите блюда с доставкой. Европейская, восточная и авторская кухня.</p>
             <div class="hero-buttons">
-                <a href="#booking" class="glass-btn glass-btn--primary"><i class="fas fa-calendar-alt"></i> Забронировать столик</a>
-                <a href="#menu" class="glass-btn"><i class="fas fa-utensils"></i> Смотреть меню</a>
+                <a href="#booking" class="glass-btn glass-btn--primary"><i class="fas fa-calendar-alt"></i> <span data-i18n="hero.btnBook">Забронировать столик</span></a>
+                <a href="#menu" class="glass-btn"><i class="fas fa-utensils"></i> <span data-i18n="hero.btnMenu">Смотреть меню</span></a>
             </div>
         </div>
     </section>
@@ -583,14 +682,14 @@
     <!-- МЕНЮ И ЗАКАЗ ЕДЫ -->
     <section class="section" id="menu">
         <div class="container">
-            <h2 class="section-title">Наше меню</h2>
-            <p class="section-subtitle">Блюда от шеф-повара. Добавляйте в корзину и оформляйте заказ.</p>
+            <h2 class="section-title" data-i18n="menu.title">Наше меню</h2>
+            <p class="section-subtitle" data-i18n="menu.subtitle">Блюда от шеф-повара. Добавляйте в корзину и оформляйте заказ.</p>
             
             <div class="pricing-tabs" id="menuTabs" role="tablist" aria-label="Разделы меню"></div>
             <div id="menuPanels"></div>
 
             <div style="margin-top: 30px; text-align: right;">
-                <button class="glass-btn glass-btn--primary" id="viewCartBtn"><i class="fas fa-shopping-bag"></i> Оформить заказ</button>
+                <button class="glass-btn glass-btn--primary" id="viewCartBtn"><i class="fas fa-shopping-bag"></i> <span data-i18n="menu.checkout">Оформить заказ</span></button>
             </div>
         </div>
     </section>
@@ -598,33 +697,36 @@
     <!-- БРОНИРОВАНИЕ СТОЛИКОВ -->
     <section class="section pricing-section" id="booking">
         <div class="container">
-            <h2 class="section-title">Бронирование столика</h2>
-            <p class="section-subtitle">Выберите дату, время и количество гостей</p>
+            <h2 class="section-title" data-i18n="booking.title">Бронирование столика</h2>
+            <p class="section-subtitle" data-i18n="booking.subtitle">Выберите дату, время и количество гостей</p>
             <div class="form-container" style="max-width: 600px;">
                 <form id="bookingForm">
                     <div class="form-group">
-                        <label class="form-label">Ваше имя</label>
-                        <input type="text" class="form-input" id="bookName" placeholder="Имя" required>
+                        <label class="form-label" data-i18n="booking.name">Ваше имя</label>
+                        <input type="text" class="form-input" id="bookName" data-i18n-placeholder="booking.phName" placeholder="Имя" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Телефон</label>
-                        <input type="tel" class="form-input" id="bookPhone" placeholder="+993 XX XX XX XX" required>
+                        <label class="form-label" data-i18n="booking.phone">Телефон</label>
+                        <div class="phone-field">
+                            <span class="phone-field__prefix" aria-hidden="true">+993</span>
+                            <input type="tel" class="form-input" id="bookPhone" inputmode="numeric" autocomplete="tel-national" data-i18n-placeholder="booking.phPhone" placeholder="63 109303" required>
+                        </div>
                     </div>
                     <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                        <div><label class="form-label">Дата</label><input type="date" class="form-input" id="bookDate" required></div>
-                        <div><label class="form-label">Время</label><input type="time" class="form-input" id="bookTime" required></div>
+                        <div><label class="form-label" data-i18n="booking.date">Дата</label><input type="date" class="form-input" id="bookDate" required></div>
+                        <div><label class="form-label" data-i18n="booking.time">Время</label><input type="time" class="form-input" id="bookTime" required></div>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Количество гостей</label>
+                        <label class="form-label" data-i18n="booking.guests">Количество гостей</label>
                         <select class="form-select" id="bookGuests">
                             <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Особые пожелания</label>
-                        <textarea class="form-textarea" id="bookNote" rows="2" placeholder="Аллергии, повод, место у окна..."></textarea>
+                        <label class="form-label" data-i18n="booking.note">Особые пожелания</label>
+                        <textarea class="form-textarea" id="bookNote" rows="2" data-i18n-placeholder="booking.phNote" placeholder="Аллергии, повод, место у окна..."></textarea>
                     </div>
-                    <button type="submit" class="glass-btn glass-btn--primary" style="width:100%; justify-content: center;"><i class="fas fa-check-circle"></i> Забронировать</button>
+                    <button type="submit" class="glass-btn glass-btn--primary" style="width:100%; justify-content: center;"><i class="fas fa-check-circle"></i> <span data-i18n="booking.submit">Забронировать</span></button>
                 </form>
             </div>
         </div>
@@ -633,31 +735,55 @@
     <!-- О НАС -->
     <section class="section about-section" id="about">
         <div class="container">
-            <h2 class="section-title">О ресторане BYBENIK</h2>
+            <h2 class="section-title" data-i18n="about.title">О ресторане BYBENIK</h2>
             <div class="about-content">
-                <p class="about-text">BYBENIK — это больше, чем ресторан. Это место, где встречаются изысканная кухня и душевная атмосфера. Наша команда создаёт блюда с любовью, используя только свежие продукты. Мы рады предложить вам как классические позиции, так и авторские эксперименты шефа.</p>
-                <p class="about-text">В нашем зале 60 посадочных мест, уютная лаунж-зона и летняя терраса. Идеально для романтического ужина, деловой встречи или семейного обеда.</p>
+                <p class="about-text" data-i18n="about.p1">BYBENIK — это больше, чем ресторан. Это место, где встречаются изысканная кухня и душевная атмосфера. Наша команда создаёт блюда с любовью, используя только свежие продукты. Мы рады предложить вам как классические позиции, так и авторские эксперименты шефа.</p>
+                <p class="about-text" data-i18n="about.p2">В нашем зале 60 посадочных мест, уютная лаунж-зона и летняя терраса. Идеально для романтического ужина, деловой встречи или семейного обеда.</p>
             </div>
         </div>
     </section>
 
-    <!-- ОТЗЫВЫ -->
+    <!-- INSTAGRAM -->
+    <section class="section" id="instagram">
+        <div class="container">
+            <h2 class="section-title" data-i18n="insta.title">Моменты из Instagram</h2>
+            <p class="insta-section-note" data-i18n="insta.note">Виджет Instagram и ссылки на профиль @by_benik. Если встроенная лента не загрузилась, откройте аккаунт по кнопке ниже.</p>
+            <div class="insta-tabs-bar" role="tablist">
+                <button type="button" class="insta-tab-btn active" data-insta-tab="embed" role="tab" aria-selected="true" data-i18n="insta.tabFeed">Лента</button>
+                <button type="button" class="insta-tab-btn" data-insta-tab="grid" role="tab" aria-selected="false" data-i18n="insta.tabGrid">Галерея</button>
+            </div>
+            <div class="insta-panel is-active" id="instaPanelEmbed" role="tabpanel">
+                <div class="insta-embed-wrap">
+                    <iframe title="Instagram BYBENIK" loading="lazy" src="https://www.instagram.com/by_benik/embed/?cr=1&amp;v=12" allowtransparency="true" allowfullscreen></iframe>
+                </div>
+                <p style="text-align:center;margin-top:16px">
+                    <a href="https://www.instagram.com/by_benik?igsh=M282ZXByZHlsMGt4&amp;utm_source=qr" class="glass-btn glass-btn--primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> @by_benik</a>
+                </p>
+            </div>
+            <div class="insta-panel" id="instaPanelGrid" role="tabpanel">
+                <div class="insta-grid" id="instaGrid" aria-label="Instagram"></div>
+                <p style="text-align:center;margin-top:16px">
+                    <a href="https://www.instagram.com/by_benik?igsh=M282ZXByZHlsMGt4&amp;utm_source=qr" class="glass-btn" target="_blank" rel="noopener noreferrer" data-i18n="insta.openProfile">Открыть профиль в Instagram</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ОТЗЫВЫ (Google Maps) -->
     <section class="section" id="reviews">
         <div class="container">
-            <h2 class="section-title">Отзывы гостей</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">Отмечали день рождения, всё на высшем уровне. Стейк просто тает во рту, персонал внимательный. Обязательно вернёмся!</p>
-                    <div class="testimonial-author"><div class="testimonial-avatar">АК</div><div><div style="font-weight:600;">Айнур К.</div><div style="font-size:0.8rem;">Google Maps</div></div></div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">Заказывали доставку — привезли быстро, горячее. Упаковка аккуратная. Паста Карбонара очень вкусная.</p>
-                    <div class="testimonial-author"><div class="testimonial-avatar">РМ</div><div><div style="font-weight:600;">Рашад М.</div><div style="font-size:0.8rem;">Яндекс.Еда</div></div></div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">Лучший чизкейк в городе! И кофе отличный. Теперь это наше любимое место для завтраков по выходным.</p>
-                    <div class="testimonial-author"><div class="testimonial-avatar">ЛГ</div><div><div style="font-weight:600;">Лейла Г.</div><div style="font-size:0.8rem;">Instagram</div></div></div>
-                </div>
+            <h2 class="section-title" data-i18n="reviews.title">Отзывы с Google Карт</h2>
+            <p class="reviews-intro" data-i18n="reviews.intro">Актуальные оценки и тексты отзывов отображаются в Google. Здесь — карусель с последними отзывами (обновляется при наличии файла google-reviews.json на сервере).</p>
+            <div class="reviews-carousel" id="reviewsCarousel">
+                <div class="reviews-track" id="reviewsTrack"></div>
+            </div>
+            <div class="reviews-controls">
+                <button type="button" id="reviewsPrev" class="reviews-prev" aria-label="Назад"><i class="fas fa-chevron-left"></i></button>
+                <div class="reviews-dots" id="reviewsDots"></div>
+                <button type="button" id="reviewsNext" class="reviews-next" aria-label="Вперёд"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="reviews-google-cta">
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=BYBENIK+%D0%90%D1%88%D1%85%D0%B0%D0%B1%D0%B0%D0%B4+%D0%A1%D0%B0%D0%BD%D1%82%D0%B0-%D0%91%D0%B0%D1%80%D0%B1%D0%B0%D1%80%D0%B0" class="glass-btn glass-btn--primary" target="_blank" rel="noopener noreferrer" data-i18n="reviews.allGoogle">Все отзывы и оценки в Google Картах</a>
             </div>
         </div>
     </section>
@@ -669,14 +795,14 @@
             <div class="earth-fallback" id="earthFallback"></div>
         </div>
         <div class="location-card">
-            <h3>Наш адрес</h3>
-            <p>Ресторан BYBENIK</p>
+            <h3 data-i18n="contact.title">Наш адрес</h3>
+            <p data-i18n="contact.restaurant">Ресторан BYBENIK</p>
             <div class="footer-contact"><i class="fas fa-phone-alt"></i><span>+993 63 109303</span></div>
-            <div class="footer-contact"><i class="fas fa-map-marker-alt"></i><span>Ашхабад, мир 4 , Санта-Барбара.</span></div>
-            <div class="footer-contact"><i class="fas fa-clock"></i><span>Пн-Вс: 10:00 – 23:00</span></div>
+            <div class="footer-contact"><i class="fas fa-map-marker-alt"></i><span data-i18n="contact.address">Ашхабад, мир 4 , Санта-Барбара.</span></div>
+            <div class="footer-contact"><i class="fas fa-clock"></i><span data-i18n="contact.hours">Пн-Вс: 10:00 – 23:00</span></div>
             <div class="hero-buttons" style="margin-top:20px;">
-                <a href="tel:+99363109303" class="glass-btn glass-btn--primary"><i class="fas fa-phone"></i> Позвонить</a>
-                <a href="https://www.google.com/maps/search/?api=1&amp;query=%D0%90%D1%88%D1%85%D0%B0%D0%B1%D0%B0%D0%B4%20%D0%BC%D0%B8%D1%80%204%20%D0%A1%D0%B0%D0%BD%D1%82%D0%B0-%D0%91%D0%B0%D1%80%D0%B1%D0%B0%D1%80%D0%B0%20BYBENIK" class="glass-btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marked-alt"></i> Посмотреть на карте</a>
+                <a href="tel:+99363109303" class="glass-btn glass-btn--primary"><i class="fas fa-phone"></i> <span data-i18n="contact.call">Позвонить</span></a>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=%D0%90%D1%88%D1%85%D0%B0%D0%B1%D0%B0%D0%B4%20%D0%BC%D0%B8%D1%80%204%20%D0%A1%D0%B0%D0%BD%D1%82%D0%B0-%D0%91%D0%B0%D1%80%D0%B1%D0%B0%D1%80%D0%B0%20BYBENIK" class="glass-btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marked-alt"></i> <span data-i18n="contact.map">Посмотреть на карте</span></a>
             </div>
         </div>
     </section>
@@ -684,24 +810,28 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column"><h3>BYBENIK</h3><ul class="footer-links"><li><a href="#menu">Меню</a></li><li><a href="#booking">Бронь</a></li></ul></div>
-                <div class="footer-column"><h3>Контакты</h3><div class="footer-contact"><i class="fas fa-phone-alt"></i><span>+993 63 109303</span></div><div class="footer-contact"><i class="fas fa-envelope"></i><span>hello@bybenik.az</span></div></div>
+                <div class="footer-column"><h3>BYBENIK</h3><ul class="footer-links"><li><a href="#menu" data-i18n="footer.menu">Меню</a></li><li><a href="#booking" data-i18n="footer.booking">Бронь</a></li><li><a href="#instagram">Instagram</a></li></ul></div>
+                <div class="footer-column"><h3 data-i18n="footer.contacts">Контакты</h3><div class="footer-contact"><i class="fas fa-phone-alt"></i><span>+993 63 109303</span></div><div class="footer-contact"><i class="fas fa-envelope"></i><span>hello@bybenik.az</span></div><div class="footer-contact"><a href="https://www.instagram.com/by_benik?igsh=M282ZXByZHlsMGt4&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:6px;"><i class="fab fa-instagram"></i> @by_benik</a></div></div>
             </div>
-            <div class="footer-bottom"><p>© 2026 Ресторан BYBENIK. Все права защищены.</p></div>
+            <div class="footer-bottom"><p data-i18n="footer.copy">© 2026 Ресторан BYBENIK. Все права защищены.</p></div>
         </div>
     </footer>
 
     <!-- МОДАЛЬНОЕ ОКНО КОРЗИНЫ (скрыто) -->
     <div id="cartModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; backdrop-filter:blur(4px); z-index:2000; align-items:center; justify-content:center;">
         <div class="cart-modal__inner">
-            <h3 style="margin-bottom:15px;">Ваш заказ <i class="fas fa-shopping-cart"></i></h3>
+            <h3 style="margin-bottom:15px;"><span data-i18n="cart.title">Ваш заказ</span> <i class="fas fa-shopping-cart"></i></h3>
             <div id="cartItemsList"></div>
-            <div style="font-weight:700; margin:15px 0;">Итого: <span id="cartTotal">0</span> тмт</div>
-            <div class="form-group">
-                <input type="text" class="form-input" id="cartAddress" placeholder="Адрес доставки">
+            <div class="cart-totals" id="cartTotalsBlock">
+                <div class="cart-totals__row"><span data-i18n="cart.subtotal">Сумма блюд</span><span id="cartSubtotal">0</span> <span class="cart-currency">тмт</span></div>
+                <div class="cart-totals__row"><span data-i18n="cart.delivery">Доставка</span><span id="cartDelivery">20</span> <span class="cart-currency">тмт</span></div>
+                <div class="cart-totals__row cart-totals__row--strong"><span data-i18n="cart.total">Итого</span><span><span id="cartTotal">0</span> <span class="cart-currency">тмт</span></span></div>
             </div>
-            <button class="glass-btn glass-btn--primary" id="confirmOrderBtn" style="width:100%;">Подтвердить заказ</button>
-            <button class="glass-btn" id="closeCartBtn" style="margin-top:10px; width:100%;">Закрыть</button>
+            <div class="form-group">
+                <input type="text" class="form-input" id="cartAddress" data-i18n-placeholder="cart.phAddress" placeholder="Адрес доставки">
+            </div>
+            <button class="glass-btn glass-btn--primary" id="confirmOrderBtn" style="width:100%;"><span data-i18n="cart.confirm">Подтвердить заказ</span></button>
+            <button class="glass-btn" id="closeCartBtn" style="margin-top:10px; width:100%;"><span data-i18n="cart.close">Закрыть</span></button>
         </div>
     </div>
 
@@ -920,7 +1050,7 @@ window.BYBENIK_MENU_TABS = [
                 var icon = btn && btn.querySelector('i');
                 if (icon) icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
                 var metaColor = document.getElementById('metaThemeColor');
-                if (metaColor) metaColor.setAttribute('content', theme === 'dark' ? '#0f1117' : '#f5f7fa');
+                if (metaColor) metaColor.setAttribute('content', theme === 'dark' ? '#141414' : '#f4f2ef');
             }
             try {
                 var storedTheme = localStorage.getItem(THEME_KEY);
@@ -940,41 +1070,167 @@ window.BYBENIK_MENU_TABS = [
             function escHtml(s) {
                 return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
             }
+            var LANG_KEY = 'bybenik-lang';
+            var currentLang = 'ru';
+            var MENU_TAB_LABELS = {
+                ru: {
+                    'tab-snacks-salads': 'Закуски и салаты', 'tab-soups-garnish': 'Супы и гарниры', 'tab-bakery-pizza': 'Выпечка и пицца',
+                    'tab-mangal': 'Мангал', 'tab-seafood': 'Рыба и морепродукты', 'tab-meat': 'Мясные блюда',
+                    'tab-sushi-beer': 'Суши и к пиву', 'tab-dessert-bread': 'Десерты и хлеб'
+                },
+                en: {
+                    'tab-snacks-salads': 'Starters & salads', 'tab-soups-garnish': 'Soups & sides', 'tab-bakery-pizza': 'Bakery & pizza',
+                    'tab-mangal': 'Grill', 'tab-seafood': 'Fish & seafood', 'tab-meat': 'Meat dishes',
+                    'tab-sushi-beer': 'Sushi & beer snacks', 'tab-dessert-bread': 'Desserts & bread'
+                },
+                tk: {
+                    'tab-snacks-salads': 'Goşma we salatlar', 'tab-soups-garnish': 'Çorba we goşma', 'tab-bakery-pizza': 'Çörek we pitsa',
+                    'tab-mangal': 'Mangal', 'tab-seafood': 'Balyk we deňiz önümleri', 'tab-meat': 'Etly naharlar',
+                    'tab-sushi-beer': 'Suşi we piwo üçin', 'tab-dessert-bread': 'Desert we çörek'
+                }
+            };
+            var STR = {
+                ru: {
+                    'splash.tagline': 'Бронирование столиков · Доставка еды',
+                    'nav.menu': 'Меню', 'nav.booking': 'Бронь', 'nav.insta': 'Instagram', 'nav.about': 'О нас', 'nav.reviews': 'Отзывы', 'nav.contact': 'Контакты', 'nav.cart': 'Корзина',
+                    'hero.title': 'Ресторан BYBENIK — атмосфера, вкус, уют',
+                    'hero.subtitle': 'Забронируйте столик онлайн или закажите блюда с доставкой. Европейская, восточная и авторская кухня.',
+                    'hero.btnBook': 'Забронировать столик', 'hero.btnMenu': 'Смотреть меню',
+                    'menu.title': 'Наше меню', 'menu.subtitle': 'Блюда от шеф-повара. Добавляйте в корзину и оформляйте заказ.', 'menu.checkout': 'Оформить заказ',
+                    'booking.title': 'Бронирование столика', 'booking.subtitle': 'Выберите дату, время и количество гостей',
+                    'booking.name': 'Ваше имя', 'booking.phone': 'Телефон', 'booking.date': 'Дата', 'booking.time': 'Время', 'booking.guests': 'Количество гостей', 'booking.note': 'Особые пожелания', 'booking.submit': 'Забронировать',
+                    'booking.phName': 'Имя', 'booking.phPhone': '63 109303', 'booking.phNote': 'Аллергии, повод, место у окна...',
+                    'about.title': 'О ресторане BYBENIK',
+                    'about.p1': 'BYBENIK — это больше, чем ресторан. Это место, где встречаются изысканная кухня и душевная атмосфера. Наша команда создаёт блюда с любовью, используя только свежие продукты. Мы рады предложить вам как классические позиции, так и авторские эксперименты шефа.',
+                    'about.p2': 'В нашем зале 60 посадочных мест, уютная лаунж-зона и летняя терраса. Идеально для романтического ужина, деловой встречи или семейного обеда.',
+                    'insta.title': 'Моменты из Instagram', 'insta.note': 'Виджет Instagram и ссылки на профиль @by_benik. Если лента не загрузилась, откройте аккаунт по кнопке ниже.',
+                    'insta.tabFeed': 'Лента', 'insta.tabGrid': 'Галерея', 'insta.openProfile': 'Открыть профиль в Instagram',
+                    'reviews.title': 'Отзывы с Google Карт',
+                    'reviews.intro': 'Актуальные оценки и тексты — в Google Картах. Здесь карусель отзывов (можно подгрузить google-reviews.json на сервер).',
+                    'reviews.allGoogle': 'Все отзывы и оценки в Google Картах',
+                    'contact.title': 'Наш адрес', 'contact.restaurant': 'Ресторан BYBENIK', 'contact.address': 'Ашхабад, мир 4 , Санта-Барбара.', 'contact.hours': 'Пн-Вс: 10:00 – 23:00', 'contact.call': 'Позвонить', 'contact.map': 'Посмотреть на карте',
+                    'footer.menu': 'Меню', 'footer.booking': 'Бронь', 'footer.contacts': 'Контакты', 'footer.copy': '© 2026 Ресторан BYBENIK. Все права защищены.',
+                    'cart.title': 'Ваш заказ', 'cart.subtotal': 'Сумма блюд', 'cart.delivery': 'Доставка', 'cart.total': 'Итого', 'cart.phAddress': 'Адрес доставки', 'cart.confirm': 'Подтвердить заказ', 'cart.close': 'Закрыть', 'cart.empty': 'Корзина пуста', 'cart.removeTitle': 'Удалить',
+                    'aria.theme': 'Переключить тему', 'alert.cartAddr': 'Введите адрес доставки', 'alert.cartEmpty': 'Корзина пуста', 'alert.booking': 'Заполните обязательные поля',
+                    'alert.orderOk': 'Заказ оформлен! Доставка по адресу:', 'alert.bookingOk': 'Столик забронирован. Ждём вас!',
+                    'reviews.googleBadge': 'Google Карты', 'reviews.prev': 'Назад', 'reviews.next': 'Вперёд'
+                },
+                en: {
+                    'splash.tagline': 'Table booking · Food delivery',
+                    'nav.menu': 'Menu', 'nav.booking': 'Book', 'nav.insta': 'Instagram', 'nav.about': 'About', 'nav.reviews': 'Reviews', 'nav.contact': 'Contact', 'nav.cart': 'Cart',
+                    'hero.title': 'BYBENIK restaurant — atmosphere, taste, comfort',
+                    'hero.subtitle': 'Book a table online or order delivery. European, Eastern and chef’s signature cuisine.',
+                    'hero.btnBook': 'Book a table', 'hero.btnMenu': 'View menu',
+                    'menu.title': 'Our menu', 'menu.subtitle': 'Chef’s dishes. Add to cart and place your order.', 'menu.checkout': 'Checkout',
+                    'booking.title': 'Book a table', 'booking.subtitle': 'Pick date, time and party size',
+                    'booking.name': 'Your name', 'booking.phone': 'Phone', 'booking.date': 'Date', 'booking.time': 'Time', 'booking.guests': 'Guests', 'booking.note': 'Special requests', 'booking.submit': 'Book',
+                    'booking.phName': 'Name', 'booking.phPhone': '63 109303', 'booking.phNote': 'Allergies, occasion, window seat…',
+                    'about.title': 'About BYBENIK',
+                    'about.p1': 'BYBENIK is more than a restaurant — fine dining meets a warm atmosphere. We cook with love and fresh ingredients, from classics to the chef’s creations.',
+                    'about.p2': '60 seats, lounge area and summer terrace — perfect for dates, business lunches and family meals.',
+                    'insta.title': 'Instagram moments', 'insta.note': 'Instagram widget and @by_benik profile. If the feed fails to load, open the profile below.',
+                    'insta.tabFeed': 'Feed', 'insta.tabGrid': 'Gallery', 'insta.openProfile': 'Open Instagram profile',
+                    'reviews.title': 'Google Maps reviews',
+                    'reviews.intro': 'Latest ratings and texts live on Google Maps. This carousel shows reviews (optional google-reviews.json on your server).',
+                    'reviews.allGoogle': 'All reviews on Google Maps',
+                    'contact.title': 'Our address', 'contact.restaurant': 'BYBENIK restaurant', 'contact.address': 'Ashgabat, Mir 4, Santa Barbara.', 'contact.hours': 'Mon–Sun: 10:00 – 23:00', 'contact.call': 'Call', 'contact.map': 'View on map',
+                    'footer.menu': 'Menu', 'footer.booking': 'Book', 'footer.contacts': 'Contact', 'footer.copy': '© 2026 BYBENIK restaurant. All rights reserved.',
+                    'cart.title': 'Your order', 'cart.subtotal': 'Food subtotal', 'cart.delivery': 'Delivery', 'cart.total': 'Total', 'cart.phAddress': 'Delivery address', 'cart.confirm': 'Confirm order', 'cart.close': 'Close', 'cart.empty': 'Cart is empty', 'cart.removeTitle': 'Remove',
+                    'aria.theme': 'Toggle theme', 'alert.cartAddr': 'Enter delivery address', 'alert.cartEmpty': 'Cart is empty', 'alert.booking': 'Please fill required fields',
+                    'alert.orderOk': 'Order placed! Delivery to:', 'alert.bookingOk': 'Table booked. See you soon!',
+                    'reviews.googleBadge': 'Google Maps', 'reviews.prev': 'Previous', 'reviews.next': 'Next'
+                },
+                tk: {
+                    'splash.tagline': 'Stol bron etmek · Iýmit eltip bermek',
+                    'nav.menu': 'Menýu', 'nav.booking': 'Bron', 'nav.insta': 'Instagram', 'nav.about': 'Biz barada', 'nav.reviews': 'Synlar', 'nav.contact': 'Aragatnaşyk', 'nav.cart': 'Sebet',
+                    'hero.title': 'BYBENIK restoran — atmosfera, tagam, amatlylyk',
+                    'hero.subtitle': 'Stoly onlaýn bron ediň ýa-da eltip bermek bilen sargyt ediň. Ýewropa, gündogar we şefin awtorlyk naharlary.',
+                    'hero.btnBook': 'Stol bron et', 'hero.btnMenu': 'Menýu gör',
+                    'menu.title': 'Bizin menýumyz', 'menu.subtitle': 'Şefin naharlary. Sebede goşuň we sargyt ediň.', 'menu.checkout': 'Sargyt et',
+                    'booking.title': 'Stol bron etmek', 'booking.subtitle': 'Sene, wagt we myhman sanyny saýlaň',
+                    'booking.name': 'Adyňyz', 'booking.phone': 'Telefon', 'booking.date': 'Sene', 'booking.time': 'Wagt', 'booking.guests': 'Myhman sany', 'booking.note': 'Aýratynlyklar', 'booking.submit': 'Bron et',
+                    'booking.phName': 'Ady', 'booking.phPhone': '63 109303', 'booking.phNote': 'Allergiýa, ýagdaý, penjire ýany…',
+                    'about.title': 'BYBENIK barada',
+                    'about.p1': 'BYBENIK diňe restoran däl — ol ýokary tagam bilen gowy atmosferany birleşdirýär. Biz täze önümler bilen söýgi bilen bişirýäris — klassikadan şefiň täze pikirlerine çenli.',
+                    'about.p2': '60 orun, lounge we ýazylyk terassa — söýgi üçin, iş duşuşygy we maşgala amatly.',
+                    'insta.title': 'Instagram pursatlary', 'insta.note': 'Instagram widjeti we @by_benik profili. Lent ýüklenmese, aşakdaky düwme bilen açyň.',
+                    'insta.tabFeed': 'Lenta', 'insta.tabGrid': 'Galereýa', 'insta.openProfile': 'Instagram profilini aç',
+                    'reviews.title': 'Google Kartalaryndan synlar',
+                    'reviews.intro': 'Soňky bahalar we tekstler Google Kartalarda. Bu karusel synlary görkezýär (islege görä google-reviews.json).',
+                    'reviews.allGoogle': 'Google Kartalardaky ähli synlar',
+                    'contact.title': 'Salgymyz', 'contact.restaurant': 'BYBENIK restoran', 'contact.address': 'Aşgabat, Mir 4, Santa Barbara.', 'contact.hours': 'Duşenbe–Ýekşenbe: 10:00 – 23:00', 'contact.call': 'Jaň et', 'contact.map': 'Kartada gör',
+                    'footer.menu': 'Menýu', 'footer.booking': 'Bron', 'footer.contacts': 'Aragatnaşyk', 'footer.copy': '© 2026 BYBENIK restoran. Ähli hukuklar goragly.',
+                    'cart.title': 'Sargydyňyz', 'cart.subtotal': 'Naharlar', 'cart.delivery': 'Eltip bermek', 'cart.total': 'Jemi', 'cart.phAddress': 'Eltip beriş salgysy', 'cart.confirm': 'Tassykla', 'cart.close': 'Ýap', 'cart.empty': 'Sebet boş', 'cart.removeTitle': 'Aýyr',
+                    'aria.theme': 'Temany üýtget', 'alert.cartAddr': 'Eltip beriş salgysyny ýazyň', 'alert.cartEmpty': 'Sebet boş', 'alert.booking': 'Hökman meýdançalary dolduryň',
+                    'alert.orderOk': 'Sargyt kabul edildi! Eltip beriş salgysy:', 'alert.bookingOk': 'Stol bron edildi. Garaşýarys!',
+                    'reviews.googleBadge': 'Google Kartalar', 'reviews.prev': 'Yza', 'reviews.next': 'Öňe'
+                }
+            };
+            function t(key) {
+                var pack = STR[currentLang] || STR.ru;
+                return pack[key] != null ? pack[key] : (STR.ru[key] || key);
+            }
+            function applyI18n() {
+                document.documentElement.setAttribute('lang', currentLang === 'tk' ? 'tk' : currentLang);
+                document.querySelectorAll('[data-i18n]').forEach(function(el) {
+                    var k = el.getAttribute('data-i18n');
+                    if (k) el.textContent = t(k);
+                });
+                document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+                    var k = el.getAttribute('data-i18n-placeholder');
+                    if (k) el.setAttribute('placeholder', t(k));
+                });
+                var tt = document.getElementById('themeToggle');
+                if (tt) {
+                    var ak = tt.getAttribute('data-i18n-aria');
+                    if (ak) tt.setAttribute('aria-label', t(ak));
+                }
+                var rp = document.getElementById('reviewsPrev');
+                var rn = document.getElementById('reviewsNext');
+                if (rp) rp.setAttribute('aria-label', t('reviews.prev'));
+                if (rn) rn.setAttribute('aria-label', t('reviews.next'));
+            }
+            function getTabLabel(tabId) {
+                var M = MENU_TAB_LABELS[currentLang] || MENU_TAB_LABELS.ru;
+                return M[tabId] || MENU_TAB_LABELS.ru[tabId] || tabId;
+            }
             function buildMenu() {
-                const tabs = window.BYBENIK_MENU_TABS;
+                var tabs = window.BYBENIK_MENU_TABS;
                 if (!tabs || !tabs.length) return;
-                const tabsEl = document.getElementById('menuTabs');
-                const panelsEl = document.getElementById('menuPanels');
+                var tabsEl = document.getElementById('menuTabs');
+                var panelsEl = document.getElementById('menuPanels');
                 tabsEl.innerHTML = '';
                 panelsEl.innerHTML = '';
-                tabs.forEach((cat, idx) => {
-                    const tab = document.createElement('div');
+                tabs.forEach(function(cat, idx) {
+                    var tab = document.createElement('div');
                     tab.className = 'pricing-tab' + (idx === 0 ? ' active' : '');
                     tab.dataset.tab = cat.id;
                     tab.setAttribute('role', 'tab');
-                    tab.textContent = cat.label;
+                    tab.textContent = getTabLabel(cat.id);
                     tabsEl.appendChild(tab);
-                    const panel = document.createElement('div');
+                    var panel = document.createElement('div');
                     panel.className = 'pricing-content' + (idx === 0 ? ' active' : '');
                     panel.id = cat.id;
                     panel.setAttribute('role', 'tabpanel');
-                    let html = '';
+                    var html = '';
                     cat.blocks.forEach(function(block) {
-                        html += '<h4 class="menu-block-title">' + escHtml(block.title) + '</h4><div class="services-grid">';
+                        html += '<details class="menu-acc">';
+                        html += '<summary class="menu-acc__summary">' + escHtml(block.title) + '<span class="menu-acc__chev">▼</span></summary>';
+                        html += '<div class="menu-acc__body">';
                         block.items.forEach(function(pair) {
                             var name = pair[0], price = pair[1];
                             var ea = escAttr(name);
                             var eh = escHtml(name);
-                            html += '<div class="service-card"><div class="service-card__icon"><i class="fas fa-utensils"></i></div>';
-                            html += '<h3 class="service-card__title">' + eh + '</h3>';
-                            html += '<div class="service-card__price">' + price + ' тмт</div>';
+                            html += '<div class="menu-row">';
+                            html += '<span class="menu-row__name">' + eh + '</span>';
+                            html += '<span class="menu-row__price">' + price + ' тмт</span>';
                             html += '<div class="menu-quantity">';
                             html += '<button type="button" class="qty-btn" data-dish="' + ea + '" data-price="' + price + '" data-action="dec">−</button>';
                             html += '<span class="qty-display" data-dish="' + ea + '">0</span>';
                             html += '<button type="button" class="qty-btn" data-dish="' + ea + '" data-price="' + price + '" data-action="inc">+</button>';
                             html += '</div></div>';
                         });
-                        html += '</div>';
+                        html += '</div></details>';
                     });
                     panel.innerHTML = html;
                     panelsEl.appendChild(panel);
@@ -986,7 +1242,129 @@ window.BYBENIK_MENU_TABS = [
                 if (el) el.classList.add('hidden');
             }, 3000);
 
+            var DELIVERY_FEE = 20;
+            var reviewsData = [];
+            var reviewsSlide = 0;
+
+            try {
+                var sl = localStorage.getItem(LANG_KEY);
+                if (sl === 'ru' || sl === 'en' || sl === 'tk') currentLang = sl;
+            } catch (e0) {}
+            document.querySelectorAll('.lang-btn').forEach(function(btn) {
+                var on = btn.getAttribute('data-lang') === currentLang;
+                btn.classList.toggle('active', on);
+                btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+                btn.addEventListener('click', function() {
+                    currentLang = btn.getAttribute('data-lang');
+                    try { localStorage.setItem(LANG_KEY, currentLang); } catch (e1) {}
+                    document.querySelectorAll('.lang-btn').forEach(function(b) {
+                        var act = b.getAttribute('data-lang') === currentLang;
+                        b.classList.toggle('active', act);
+                        b.setAttribute('aria-pressed', act ? 'true' : 'false');
+                    });
+                    applyI18n();
+                    buildMenu();
+                    updateCartUI();
+                });
+            });
+            applyI18n();
             buildMenu();
+
+            var FALLBACK_REVIEWS = [
+                { author_name: 'Айнур К.', rating: 5, text: 'Отмечали день рождения — всё отлично, персонал внимательный, кухня на высоте. Обязательно вернёмся!', relative_time_description: 'Google Карты' },
+                { author_name: 'Рашад М.', rating: 5, text: 'Доставка быстрая, еда горячая, упаковка аккуратная. Рекомендую.', relative_time_description: 'Google Карты' },
+                { author_name: 'Лейла Г.', rating: 5, text: 'Уютная атмосфера и вкусные десерты. Любимое место для семейного ужина.', relative_time_description: 'Google Карты' }
+            ];
+            function starsHtml(n) {
+                var s = '';
+                for (var i = 0; i < 5; i++) s += i < n ? '★' : '☆';
+                return s;
+            }
+            function renderReviewsTrack() {
+                var track = document.getElementById('reviewsTrack');
+                var dots = document.getElementById('reviewsDots');
+                if (!track || !dots) return;
+                var list = reviewsData.length ? reviewsData : FALLBACK_REVIEWS;
+                track.innerHTML = '';
+                dots.innerHTML = '';
+                list.forEach(function(r, i) {
+                    var slide = document.createElement('div');
+                    slide.className = 'review-slide';
+                    slide.innerHTML = '<div class="review-card"><div class="review-card__stars">' + starsHtml(r.rating || 5) + '</div><p class="review-card__text">' + escHtml(r.text || '') + '</p><div class="review-card__meta"><span class="review-card__author">' + escHtml(r.author_name || '') + '</span><span class="review-card__badge"><i class="fab fa-google"></i> ' + escHtml(r.relative_time_description || t('reviews.googleBadge')) + '</span></div></div>';
+                    track.appendChild(slide);
+                    var dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.className = 'reviews-dot' + (i === 0 ? ' active' : '');
+                    dot.addEventListener('click', function() { goReviewSlide(i); });
+                    dots.appendChild(dot);
+                });
+                reviewsSlide = 0;
+                updateReviewCarousel();
+            }
+            function updateReviewCarousel() {
+                var track = document.getElementById('reviewsTrack');
+                var dots = document.querySelectorAll('.reviews-dot');
+                if (!track) return;
+                track.style.transform = 'translateX(-' + (reviewsSlide * 100) + '%)';
+                dots.forEach(function(d, i) { d.classList.toggle('active', i === reviewsSlide); });
+            }
+            function goReviewSlide(i) {
+                var list = reviewsData.length ? reviewsData : FALLBACK_REVIEWS;
+                if (!list.length) return;
+                reviewsSlide = (i + list.length) % list.length;
+                updateReviewCarousel();
+            }
+            function loadReviewsFromJson() {
+                fetch('google-reviews.json', { cache: 'no-store' })
+                    .then(function(r) { if (!r.ok) throw new Error('no'); return r.json(); })
+                    .then(function(data) {
+                        var arr = data.reviews || (data.result && data.result.reviews) || (Array.isArray(data) ? data : null);
+                        reviewsData = [];
+                        if (Array.isArray(arr) && arr.length) {
+                            reviewsData = arr.map(function(x) {
+                                return {
+                                    author_name: x.author_name || x.author || 'Google user',
+                                    rating: x.rating || 5,
+                                    text: x.text || x.review || '',
+                                    relative_time_description: x.relative_time_description || x.time || 'Google Maps'
+                                };
+                            });
+                        }
+                        renderReviewsTrack();
+                    })
+                    .catch(function() { reviewsData = []; renderReviewsTrack(); });
+            }
+            function initInstaTabs() {
+                var ig = 'https://www.instagram.com/by_benik?igsh=M282ZXByZHlsMGt4&utm_source=qr';
+                var grid = document.getElementById('instaGrid');
+                if (grid && !grid.children.length) {
+                    for (var i = 0; i < 6; i++) {
+                        var a = document.createElement('a');
+                        a.href = ig; a.target = '_blank'; a.rel = 'noopener noreferrer';
+                        a.innerHTML = '<div class="insta-fallback"><i class="fab fa-instagram"></i></div>';
+                        grid.appendChild(a);
+                    }
+                }
+                document.querySelectorAll('.insta-tab-btn').forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        var tab = btn.getAttribute('data-insta-tab');
+                        document.querySelectorAll('.insta-tab-btn').forEach(function(b) {
+                            b.classList.toggle('active', b === btn);
+                            b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+                        });
+                        var pe = document.getElementById('instaPanelEmbed');
+                        var pg = document.getElementById('instaPanelGrid');
+                        if (pe) { pe.classList.toggle('is-active', tab === 'embed'); }
+                        if (pg) { pg.classList.toggle('is-active', tab === 'grid'); }
+                    });
+                });
+            }
+            renderReviewsTrack();
+            loadReviewsFromJson();
+            initInstaTabs();
+
+            document.getElementById('reviewsPrev').addEventListener('click', function() { goReviewSlide(reviewsSlide - 1); });
+            document.getElementById('reviewsNext').addEventListener('click', function() { goReviewSlide(reviewsSlide + 1); });
 
             document.getElementById('menuTabs').addEventListener('click', function(e) {
                 var t = e.target.closest('.pricing-tab');
@@ -1037,46 +1415,67 @@ window.BYBENIK_MENU_TABS = [
                 return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
             }
             function showCart() {
-                const listDiv = document.getElementById('cartItemsList');
-                const totalSpan = document.getElementById('cartTotal');
-                let total = 0;
-                let html = '';
-                if(Object.keys(cart).length === 0) html = '<p>Корзина пуста</p>';
-                else {
-                    for(let dish in cart){
-                        const item = cart[dish];
-                        const sum = item.quantity * item.price;
-                        total += sum;
-                        html += '<div style="display:flex; justify-content:space-between; margin-bottom:8px;"><span>' + escCartText(dish) + ' ×' + item.quantity + '</span><span>' + sum + ' тмт</span></div>';
+                var listDiv = document.getElementById('cartItemsList');
+                var subEl = document.getElementById('cartSubtotal');
+                var delEl = document.getElementById('cartDelivery');
+                var totalSpan = document.getElementById('cartTotal');
+                var totalsBlock = document.getElementById('cartTotalsBlock');
+                var subtotal = 0;
+                var html = '';
+                var keys = Object.keys(cart);
+                if (keys.length === 0) {
+                    html = '<p>' + escCartText(t('cart.empty')) + '</p>';
+                    if (totalsBlock) totalsBlock.style.display = 'none';
+                } else {
+                    if (totalsBlock) totalsBlock.style.display = 'block';
+                    for (var i = 0; i < keys.length; i++) {
+                        var dish = keys[i];
+                        var item = cart[dish];
+                        var sum = item.quantity * item.price;
+                        subtotal += sum;
+                        var ed = escAttr(dish);
+                        html += '<div class="cart-line"><div class="cart-line__info"><strong>' + escCartText(dish) + '</strong> × ' + item.quantity + '</div><span class="cart-line__sum">' + sum + ' тмт</span>';
+                        html += '<button type="button" class="cart-line__remove" data-remove-dish="' + ed + '" title="' + escAttr(t('cart.removeTitle')) + '"><i class="fas fa-trash-alt"></i></button></div>';
                     }
+                    if (delEl) delEl.textContent = String(DELIVERY_FEE);
                 }
                 listDiv.innerHTML = html;
-                totalSpan.textContent = total;
+                if (subEl) subEl.textContent = String(subtotal);
+                var grand = keys.length ? subtotal + DELIVERY_FEE : 0;
+                if (totalSpan) totalSpan.textContent = String(grand);
                 modal.style.display = 'flex';
             }
             viewCartBtn.addEventListener('click', showCart);
-            cartNav.addEventListener('click', (e) => { e.preventDefault(); showCart(); });
-            closeBtn.addEventListener('click', () => modal.style.display = 'none');
-            window.addEventListener('click', (e) => { if(e.target === modal) modal.style.display = 'none'; });
-            
+            cartNav.addEventListener('click', function(e) { e.preventDefault(); showCart(); });
+            closeBtn.addEventListener('click', function() { modal.style.display = 'none'; });
+            window.addEventListener('click', function(e) { if (e.target === modal) modal.style.display = 'none'; });
+            modal.addEventListener('click', function(e) {
+                var rm = e.target.closest('[data-remove-dish]');
+                if (!rm) return;
+                var d = rm.getAttribute('data-remove-dish');
+                if (d && cart[d]) { delete cart[d]; saveCart(); showCart(); }
+            });
+
             document.getElementById('confirmOrderBtn').addEventListener('click', function(){
-                const address = document.getElementById('cartAddress').value;
-                if(!address) { alert('Введите адрес доставки'); return; }
-                if(Object.keys(cart).length === 0) { alert('Корзина пуста'); return; }
-                alert(`Заказ оформлен! Доставка по адресу: ${address}. С вами свяжется оператор.`);
+                var address = document.getElementById('cartAddress').value;
+                if (!address.trim()) { alert(t('alert.cartAddr')); return; }
+                if (Object.keys(cart).length === 0) { alert(t('alert.cartEmpty')); return; }
+                var sub = 0;
+                for (var k in cart) sub += cart[k].quantity * cart[k].price;
+                alert(t('alert.orderOk') + ' ' + address + '. ' + t('cart.total') + ': ' + (sub + DELIVERY_FEE) + ' тмт');
                 cart = {}; saveCart(); modal.style.display = 'none';
             });
 
-            // Бронирование
             document.getElementById('bookingForm').addEventListener('submit', function(e){
                 e.preventDefault();
-                const name = document.getElementById('bookName').value;
-                const phone = document.getElementById('bookPhone').value;
-                const date = document.getElementById('bookDate').value;
-                const time = document.getElementById('bookTime').value;
-                const guests = document.getElementById('bookGuests').value;
-                if(!name || !phone || !date || !time) { alert('Заполните обязательные поля'); return; }
-                alert(`Столик забронирован на ${date} в ${time} для ${guests} гостей. Имя: ${name}. Ждём вас!`);
+                var name = document.getElementById('bookName').value.trim();
+                var phoneRest = document.getElementById('bookPhone').value.replace(/\D/g, '');
+                var date = document.getElementById('bookDate').value;
+                var time = document.getElementById('bookTime').value;
+                var guests = document.getElementById('bookGuests').value;
+                if (!name || !phoneRest || !date || !time) { alert(t('alert.booking')); return; }
+                var fullPhone = '+993' + phoneRest;
+                alert(t('alert.bookingOk') + ' ' + date + ' ' + time + '. ' + name + '. ' + fullPhone + ' · ' + guests);
                 this.reset();
             });
 
