@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="theme-color" content="#f5f7fa" id="metaThemeColor">
     <title>ByBenik — бронирование столиков и заказ еды</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,10 +23,46 @@
             --accent-blue: #1d48e3;
             --accent-light: #1d48e3;
             --shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            --border-subtle: rgba(0, 0, 0, 0.08);
+            --input-bg: rgba(0, 0, 0, 0.03);
+            --input-bg-focus: rgba(0, 0, 0, 0.05);
+            --hero-gradient-mid: #e9ecef;
+            --hero-radial: rgba(29, 72, 227, 0.05);
+            --map-gradient-end: #e9ecef;
+            --floating-nav-bg: rgba(240, 240, 240, 0.72);
+            --qty-btn-bg: #fff;
+            --modal-overlay: rgba(0, 0, 0, 0.4);
+            --modal-inner-bg: #fff;
             --border-radius: 28px;
             --border-radius-medium: 20px;
             --border-radius-small: 16px;
             --blur-amount: blur(20px);
+        }
+
+        [data-theme="dark"] {
+            color-scheme: dark;
+            --bg-primary: #0f1117;
+            --bg-secondary: #181b24;
+            --bg-card: rgba(28, 32, 42, 0.92);
+            --bg-glass: rgba(75, 135, 253, 0.12);
+            --bg-glass-hover: rgba(75, 135, 253, 0.2);
+            --bg-glass-strong: rgba(75, 135, 253, 0.28);
+            --text-primary: #eceff4;
+            --text-secondary: #9aa3b5;
+            --text-accent: #7c9cff;
+            --accent-blue: #4b87fd;
+            --accent-light: #7c9cff;
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --input-bg: rgba(255, 255, 255, 0.06);
+            --input-bg-focus: rgba(255, 255, 255, 0.1);
+            --hero-gradient-mid: #1a1e2a;
+            --hero-radial: rgba(75, 135, 253, 0.12);
+            --map-gradient-end: #181b24;
+            --floating-nav-bg: rgba(24, 27, 36, 0.85);
+            --qty-btn-bg: #2a3040;
+            --modal-overlay: rgba(0, 0, 0, 0.65);
+            --modal-inner-bg: #1c202a;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -41,24 +78,42 @@
 
         .site-top {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1002;
-            display: flex; justify-content: center; align-items: center;
-            padding: 10px 16px;
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 12px; padding: 8px 14px 8px 16px;
             background: var(--bg-card); backdrop-filter: blur(25px) saturate(160%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid rgba(0,0,0,0.06);
+            border-bottom: 1px solid var(--border-subtle);
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
-        .site-top__link { display: flex; align-items: center; justify-content: center; line-height: 0; }
-        .site-logo {
-            max-height: 52px; width: auto; max-width: min(280px, 85vw);
-            object-fit: contain;
+        [data-theme="dark"] .site-top { box-shadow: 0 4px 24px rgba(0,0,0,0.35); }
+        .site-top__logo-corner {
+            display: flex; align-items: center; line-height: 0; flex-shrink: 0;
+            padding: 4px 8px; border-radius: 14px;
+            background: var(--bg-glass); border: 1px solid var(--border-subtle);
+            transition: background 0.25s ease, transform 0.2s ease;
         }
+        .site-top__logo-corner:hover { background: var(--bg-glass-hover); transform: translateY(-1px); }
+        .site-logo--small {
+            max-height: 40px; width: auto; max-width: 130px; object-fit: contain;
+            display: block;
+        }
+        .theme-toggle {
+            flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
+            width: 44px; height: 44px; border-radius: 14px; cursor: pointer; border: 1px solid var(--border-subtle);
+            background: var(--bg-glass); color: var(--text-primary);
+            font-size: 1.1rem; transition: background 0.25s ease, transform 0.2s ease;
+        }
+        .theme-toggle:hover { background: var(--bg-glass-hover); transform: translateY(-1px); }
+        .theme-toggle:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; }
 
         .aurora-animation {
             position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1000;
-            background: linear-gradient(135deg, #f5f7fa 0%, #d9e2ec 100%);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #d9e2ec 100%);
             display: flex; align-items: center; justify-content: center;
             transition: opacity 0.8s ease;
+        }
+        [data-theme="dark"] .aurora-animation {
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #1e2433 100%);
         }
         .aurora-animation.hidden { opacity: 0; pointer-events: none; }
         .aurora-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; }
@@ -83,20 +138,33 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             text-shadow: 0 0 20px rgba(29,72,227,0.3);
         }
-        .aurora-subtitle { font-size: 1.2rem; color: rgba(26,26,26,0.8); text-shadow: 0 0 10px rgba(29,72,227,0.2); }
+        .aurora-subtitle { font-size: 1.2rem; color: var(--text-secondary); text-shadow: 0 0 10px rgba(29,72,227,0.2); }
         @keyframes fadeInLogo { to { opacity: 1; } }
 
         .section { padding: 80px 15px; position: relative; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
 
         .hero {
+            position: relative;
             min-height: 100vh; display: flex; align-items: center; justify-content: center;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 50%, #f5f7fa 100%);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--hero-gradient-mid) 50%, var(--bg-primary) 100%);
             overflow: hidden; padding: 20px 15px;
         }
         .hero::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(29,72,227,0.05) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 20%, var(--hero-radial) 0%, transparent 55%);
+            z-index: 1; pointer-events: none;
+        }
+        .hero-bg-logo {
+            position: absolute; inset: 0; z-index: 0; display: flex; align-items: center; justify-content: center;
+            pointer-events: none;
+        }
+        .hero-bg-logo__img {
+            width: min(92vw, 560px); height: auto; max-height: min(78vh, 520px); object-fit: contain;
+            opacity: 0.14; filter: grayscale(0.25);
+        }
+        [data-theme="dark"] .hero-bg-logo__img {
+            opacity: 0.22; filter: grayscale(0.15) brightness(1.15);
         }
         .hero-content {
             text-align: center; position: relative; z-index: 2; width: 100%;
@@ -106,7 +174,11 @@
         .hero-title {
             font-size: clamp(1.8rem, 6vw, 3rem); font-weight: 800; line-height: 1.1; margin-bottom: 15px;
             background: linear-gradient(135deg, #1a1a1a 0%, #5a5a5a 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        [data-theme="dark"] .hero-title {
+            background: linear-gradient(135deg, #f0f3fa 0%, #9aa8c9 100%);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
         }
         .hero-subtitle {
             font-size: clamp(0.9rem, 3vw, 1.1rem); color: var(--text-secondary);
@@ -116,7 +188,7 @@
 
         .glass-btn {
             background: var(--bg-glass); backdrop-filter: var(--blur-amount);
-            -webkit-backdrop-filter: var(--blur-amount); border: 1px solid rgba(0,0,0,0.08);
+            -webkit-backdrop-filter: var(--blur-amount); border: 1px solid var(--border-subtle);
             border-radius: 50px; color: var(--text-primary); padding: 12px 24px;
             font-size: 14px; font-weight: 600; text-decoration: none;
             display: inline-flex; align-items: center; gap: 6px;
@@ -131,7 +203,7 @@
         .service-card, .feature-card, .testimonial-card {
             position: relative;
             background: var(--bg-card); backdrop-filter: var(--blur-amount);
-            border: 1px solid rgba(0,0,0,0.05); border-radius: var(--border-radius);
+            border: 1px solid var(--border-subtle); border-radius: var(--border-radius);
             padding: 25px 20px; transition: all 0.3s ease; box-shadow: var(--shadow);
         }
         .service-card::before {
@@ -154,7 +226,7 @@
             border-radius: 16px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-bottom: 10px;
         }
 
-        .pricing-section { background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%); }
+        .pricing-section { background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--hero-gradient-mid) 100%); }
         .pricing-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px; }
         .pricing-tab {
             background: var(--bg-glass); backdrop-filter: var(--blur-amount);
@@ -170,7 +242,7 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .pricing-item {
             display: flex; justify-content: space-between; padding: 15px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid var(--border-subtle);
         }
         .pricing-item:last-child { border-bottom: none; }
         .pricing-item__service { font-weight: 600; }
@@ -185,7 +257,7 @@
         .feature-card__title { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
         .feature-card__description { color: var(--text-secondary); font-size: 0.85rem; }
 
-        .about-section { background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%); }
+        .about-section { background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--hero-gradient-mid) 100%); }
         .about-content { max-width: 800px; margin: 0 auto; text-align: center; }
         .about-text { color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px; text-align: left; }
 
@@ -197,17 +269,17 @@
         .form-group { margin-bottom: 15px; }
         .form-label { display: block; margin-bottom: 6px; font-weight: 600; }
         .form-input, .form-select, .form-textarea {
-            width: 100%; padding: 12px 14px; background: rgba(0,0,0,0.03);
-            border: 1px solid rgba(0,0,0,0.1); border-radius: var(--border-radius-small);
+            width: 100%; padding: 12px 14px; background: var(--input-bg); color: var(--text-primary);
+            border: 1px solid var(--border-subtle); border-radius: var(--border-radius-small);
             font-family: inherit; transition: all 0.3s ease;
         }
         .form-input:focus, .form-select:focus, .form-textarea:focus {
-            outline: none; border-color: var(--accent-light); background: rgba(0,0,0,0.05);
+            outline: none; border-color: var(--accent-light); background: var(--input-bg-focus);
         }
 
         .map-section {
             min-height: 100vh; display: flex; align-items: center; justify-content: center;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--map-gradient-end) 100%);
             position: relative; overflow: hidden;
         }
         .earth-animation-container {
@@ -225,7 +297,10 @@
             position: relative; z-index: 2; background: var(--bg-card);
             backdrop-filter: var(--blur-amount); border-radius: var(--border-radius);
             padding: 30px 20px; max-width: 450px; width: 95%; box-shadow: var(--shadow);
+            border: 1px solid var(--border-subtle); color: var(--text-primary);
         }
+        .location-card h3 { color: var(--text-primary); margin-bottom: 8px; }
+        .location-card > p { color: var(--text-secondary); margin-bottom: 12px; }
 
         .testimonial-card::before {
             content: '"'; font-size: 2.5rem; color: var(--accent-light); opacity: 0.3;
@@ -239,23 +314,25 @@
         }
 
         .footer {
-            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
-            border-top: 1px solid rgba(0,0,0,0.05); padding: 30px 15px 15px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--hero-gradient-mid) 100%);
+            border-top: 1px solid var(--border-subtle); padding: 30px 15px 15px;
         }
         .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 25px; margin-bottom: 25px; }
-        .footer-column h3 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; }
+        .footer-column h3 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; color: var(--text-primary); }
         .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 8px; }
         .footer-links a { color: var(--text-secondary); text-decoration: none; }
         .footer-links a:hover { color: var(--accent-light); }
         .footer-contact { color: var(--text-secondary); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
-        .footer-bottom { text-align: center; padding-top: 15px; border-top: 1px solid rgba(0,0,0,0.05); color: var(--text-secondary); }
+        .footer-bottom { text-align: center; padding-top: 15px; border-top: 1px solid var(--border-subtle); color: var(--text-secondary); }
 
         .floating-nav {
             position: fixed; bottom: 15px; left: 50%; transform: translateX(-50%); z-index: 1001;
-            background: rgba(240,240,240,0.06); backdrop-filter: blur(25px) saturate(160%);
-            border-radius: 25px; padding: 10px 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            background: var(--floating-nav-bg); backdrop-filter: blur(25px) saturate(160%);
+            border: 1px solid var(--border-subtle); border-radius: 25px; padding: 10px 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
         }
+        [data-theme="dark"] .floating-nav { box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
         .floating-nav:hover { transform: translateX(-50%) translateY(-3px); }
         .nav-links { display: flex; gap: 5px; }
         .nav-link {
@@ -284,9 +361,17 @@
         }
         .menu-quantity { display: flex; align-items: center; gap: 8px; margin: 12px 0; }
         .qty-btn {
-            width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1);
-            background: white; font-weight: bold; cursor: pointer;
+            width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-subtle);
+            background: var(--qty-btn-bg); color: var(--text-primary); font-weight: bold; cursor: pointer;
         }
+
+        #cartModal { background: var(--modal-overlay) !important; }
+        .cart-modal__inner {
+            background: var(--modal-inner-bg); color: var(--text-primary);
+            border: 1px solid var(--border-subtle); border-radius: 28px; padding: 25px;
+            max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;
+        }
+        .cart-modal__inner h3 { color: var(--text-primary); }
 
         @media (max-width: 768px) {
             .hero-buttons { flex-direction: column; align-items: center; }
@@ -298,9 +383,12 @@
 </head>
 <body>
     <header class="site-top">
-        <a href="#" class="site-top__link" aria-label="BYBENIK">
-            <img class="site-logo" src="logo.png" alt="BYBENIK RESTAURANT" decoding="async" fetchpriority="high">
+        <a href="#menu" class="site-top__logo-corner" aria-label="BYBENIK — на главную">
+            <img class="site-logo--small" src="logo.png" alt="" width="120" height="48" decoding="async">
         </a>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Переключить тему" title="Светлая / тёмная тема">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
     </header>
 
     <div class="aurora-animation" id="auroraAnimation">
@@ -325,6 +413,9 @@
     </nav>
 
     <section class="hero">
+        <div class="hero-bg-logo" aria-hidden="true">
+            <img class="hero-bg-logo__img" src="logo.png" alt="" decoding="async" fetchpriority="high">
+        </div>
         <div class="hero-content">
             <h1 class="hero-title">Ресторан BYBENIK — атмосфера, вкус, уют</h1>
             <p class="hero-subtitle">Забронируйте столик онлайн или закажите блюда с доставкой. Европейская, восточная и авторская кухня.</p>
@@ -430,8 +521,8 @@
             <div class="footer-contact"><i class="fas fa-map-marker-alt"></i><span>Ашхабад, мир 4 , Санта-Барбара.</span></div>
             <div class="footer-contact"><i class="fas fa-clock"></i><span>Пн-Вс: 10:00 – 23:00</span></div>
             <div class="hero-buttons" style="margin-top:20px;">
-                <a href="tel:+993XX XX XX XX" class="glass-btn glass-btn--primary"><i class="fas fa-phone"></i> Позвонить</a>
-                <a href="#" class="glass-btn" target="_blank"><i class="fas fa-map-marked-alt"></i> Открыть карту</a>
+                <a href="tel:+99363109303" class="glass-btn glass-btn--primary"><i class="fas fa-phone"></i> Позвонить</a>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=%D0%90%D1%88%D1%85%D0%B0%D0%B1%D0%B0%D0%B4%20%D0%BC%D0%B8%D1%80%204%20%D0%A1%D0%B0%D0%BD%D1%82%D0%B0-%D0%91%D0%B0%D1%80%D0%B1%D0%B0%D1%80%D0%B0%20BYBENIK" class="glass-btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marked-alt"></i> Посмотреть на карте</a>
             </div>
         </div>
     </section>
@@ -440,15 +531,15 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column"><h3>BYBENIK</h3><ul class="footer-links"><li><a href="#menu">Меню</a></li><li><a href="#booking">Бронь</a></li></ul></div>
-                <div class="footer-column"><h3>Контакты</h3><div class="footer-contact"><i class="fas fa-phone-alt"></i><span>+993 XX XX XX XX</span></div><div class="footer-contact"><i class="fas fa-envelope"></i><span>hello@bybenik.az</span></div></div>
+                <div class="footer-column"><h3>Контакты</h3><div class="footer-contact"><i class="fas fa-phone-alt"></i><span>+993 63 109303</span></div><div class="footer-contact"><i class="fas fa-envelope"></i><span>hello@bybenik.az</span></div></div>
             </div>
             <div class="footer-bottom"><p>© 2026 Ресторан BYBENIK. Все права защищены.</p></div>
         </div>
     </footer>
 
     <!-- МОДАЛЬНОЕ ОКНО КОРЗИНЫ (скрыто) -->
-    <div id="cartModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); backdrop-filter:blur(4px); z-index:2000; align-items:center; justify-content:center;">
-        <div style="background:white; border-radius:28px; padding:25px; max-width:500px; width:90%; max-height:80vh; overflow-y:auto;">
+    <div id="cartModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; backdrop-filter:blur(4px); z-index:2000; align-items:center; justify-content:center;">
+        <div class="cart-modal__inner">
             <h3 style="margin-bottom:15px;">Ваш заказ <i class="fas fa-shopping-cart"></i></h3>
             <div id="cartItemsList"></div>
             <div style="font-weight:700; margin:15px 0;">Итого: <span id="cartTotal">0</span> тмт</div>
@@ -667,6 +758,28 @@ window.BYBENIK_MENU_TABS = [
 </script>
     <script>
         (function(){
+            var THEME_KEY = 'bybenik-theme';
+            function applyTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                try { localStorage.setItem(THEME_KEY, theme); } catch (err) {}
+                var btn = document.getElementById('themeToggle');
+                var icon = btn && btn.querySelector('i');
+                if (icon) icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+                var metaColor = document.getElementById('metaThemeColor');
+                if (metaColor) metaColor.setAttribute('content', theme === 'dark' ? '#0f1117' : '#f5f7fa');
+            }
+            try {
+                var storedTheme = localStorage.getItem(THEME_KEY);
+                if (storedTheme === 'dark' || storedTheme === 'light') applyTheme(storedTheme);
+            } catch (err) {}
+            var themeToggleEl = document.getElementById('themeToggle');
+            if (themeToggleEl) {
+                themeToggleEl.addEventListener('click', function() {
+                    var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+                    applyTheme(cur === 'dark' ? 'light' : 'dark');
+                });
+            }
+
             function escAttr(s) {
                 return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
             }
@@ -766,6 +879,9 @@ window.BYBENIK_MENU_TABS = [
             const viewCartBtn = document.getElementById('viewCartBtn');
             const cartNav = document.getElementById('cartNav');
             const closeBtn = document.getElementById('closeCartBtn');
+            function escCartText(s) {
+                return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+            }
             function showCart() {
                 const listDiv = document.getElementById('cartItemsList');
                 const totalSpan = document.getElementById('cartTotal');
@@ -777,7 +893,7 @@ window.BYBENIK_MENU_TABS = [
                         const item = cart[dish];
                         const sum = item.quantity * item.price;
                         total += sum;
-                        html += `<div style="display:flex; justify-content:space-between; margin-bottom:8px;"><span>${dish} x${item.quantity}</span><span>${sum} тмт</span></div>`;
+                        html += '<div style="display:flex; justify-content:space-between; margin-bottom:8px;"><span>' + escCartText(dish) + ' ×' + item.quantity + '</span><span>' + sum + ' тмт</span></div>';
                     }
                 }
                 listDiv.innerHTML = html;
